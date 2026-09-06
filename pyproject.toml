@@ -1,7 +1,14 @@
 [project]
 name = "ios-tf-notification"
 version = "0.1.0"
+description = "Monitor TestFlight public beta availability and send Telegram notifications."
+readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
     "requests>=2.34.2",
 ]
+
+[project.urls]
+Repository = "https://github.com/wogong/testflight-telegram-notifications"
+Issues = "https://github.com/wogong/testflight-telegram-notifications/issues"

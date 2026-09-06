@@ -152,7 +152,8 @@ def run_once(cfg: dict) -> None:
             send_telegram(cfg["tg_token"], cfg["tg_chat_id"], msg, cfg["timeout"])
             print(f"[{stamp}] Telegram notification sent.")
         except requests.RequestException as exc:
-            print(f"[{stamp}] Telegram send failed: {exc}", file=sys.stderr)
+            error = str(exc).replace(cfg["tg_token"], "<redacted>")
+            print(f"[{stamp}] Telegram send failed: {error}", file=sys.stderr)
             return  # don't flip state, so we retry next run
 
     save_state({"available": available, "reason": reason, "checked_at": stamp})

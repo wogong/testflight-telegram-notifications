@@ -1,5 +1,10 @@
 .env
+.env.*
+!.env.example
 .tf_state.json
 .venv/
 __pycache__/
 *.pyc
+*.log
+.claude/
+.DS_Store
